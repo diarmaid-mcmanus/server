@@ -1,0 +1,7 @@
+geerlingguy.logstash-forwarder
+geerlingguy.logstash
+geerlingguy.nginx
+geerlingguy.elasticsearch
+geerlingguy.kibana
+geerlingguy.firewall
+tersmitten.fail2ban

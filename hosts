@@ -1,0 +1,8 @@
+[webservers]
+staticweb nickname=staticweb vm=1 ansible_ssh_host=10.10.1.11
+
+[loadbalancing]
+loadbalancer nickname=loadbalancer vm=1 ansible_ssh_host=10.10.1.10
+
+[monitoring]
+logging nickname=logging vm=1 ansible_ssh_host=10.10.1.249

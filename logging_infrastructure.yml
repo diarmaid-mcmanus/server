@@ -1,0 +1,12 @@
+---
+- hosts: logging
+
+  roles:
+    - { role: geerlingguy.elasticsearch }
+    - { role: geerlingguy.nginx }
+    - { role: geerlingguy.kibana }
+    - { role: geerlingguy.logstash }
+
+  vars:
+    nginx_remove_default_vhost: true
+

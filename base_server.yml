@@ -1,0 +1,14 @@
+---
+- hosts: all
+  roles:
+    - { role: geerlingguy.logstash-forwarder }
+    - { role: geerlingguy.firewall }
+  vars:
+    logstash_forwarder_logstash_server: logging
+    firewall_allowed_tcp_ports:
+      - "22"
+      - "80"
+      - "5601"
+      - "9200"
+      - "9300"
+

@@ -1,0 +1,13 @@
+---
+- hosts: management
+  connection: local
+  roles:
+    - { role: tersmitten.fail2ban }
+  vars:
+    fail2ban_services:
+      - name: remote-ssh-logins
+        enabled: true
+        port: ssh
+        filter: sshd
+        logpath: /var/log/auth.log
+        maxretry: 6
