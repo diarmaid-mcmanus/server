@@ -1,2 +1,7 @@
-# File for installign roles, setting up things
-- hosts: 
+- src: geerlingguy.logstash-forwarder
+- src: geerlingguy.logstash
+- src: geerlingguy.nginx
+- src: geerlingguy.elasticsearch
+- src: geerlingguy.kibana
+- src: geerlingguy.firewall
+- src: tersmitten.fail2ban
