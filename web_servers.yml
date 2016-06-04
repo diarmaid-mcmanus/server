@@ -1,5 +1,6 @@
 ---
 - hosts: staticweb
+  become: True
 
   roles:
      - { role: geerlingguy.nginx }
