@@ -1,6 +1,12 @@
 ---
-- hosts: management
+- hosts: localhost
   connection: local
+  become: True
+
+  # Generate a keypair for logstash-forwarder
+  tasks:
+    - command: openssl req -x509 -batch -nodes -newkey rsa:4098 -keyout /root/logstash-forwarder.key -out /root/logstash-forwarder.crt
+
   roles:
     - { role: tersmitten.fail2ban }
   vars:

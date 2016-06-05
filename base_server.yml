@@ -1,5 +1,9 @@
 ---
 - hosts: all
+  become: True
+  tasks:
+    - copy: src=/root/logstash-forwarder.key dest=/etc/ssl/private mode=0600
+    - copy: src=/root/logstash-forwarder.crt dest=/etc/ssl/certs mode=0600
   roles:
     - { role: geerlingguy.logstash-forwarder }
     - { role: geerlingguy.firewall }
