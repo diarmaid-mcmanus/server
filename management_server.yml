@@ -5,7 +5,8 @@
 
   # Generate a keypair for logstash-forwarder
   tasks:
-    - command: openssl req -x509 -batch -nodes -newkey rsa:4098 -keyout /root/logstash-forwarder.key -out /root/logstash-forwarder.crt
+    - command: openssl req -x509 -batch -nodes -newkey rsa:4096 -keyout logstash-forwarder.key -subj "/C=US/ST=CA/O=Acme, Inc./CN=logging" -reqexts SAN -config <(cat /etc/ssl/openssl.cnf <(printf "[SAN]\nsubjectAltName=IP:10.10.1.249")) -out logstash-forwarder.crt
+    # above based on http://security.stackexchange.com/questions/74345/provide-subjectaltname-to-openssl-directly-on-command-line
 
   roles:
     - { role: tersmitten.fail2ban }
