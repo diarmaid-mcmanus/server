@@ -2,13 +2,13 @@
 - hosts: all
   become: True
   tasks:
-    - copy: src=/root/logstash-forwarder.key dest=/etc/ssl/private mode=0600
-    - copy: src=/root/logstash-forwarder.crt dest=/etc/ssl/certs mode=0600
+    - copy: src=etc_hosts dest=/etc/hosts mode=644
+#    - copy: src=logstash-forwarder.key dest=/etc/ssl/private mode=0600
+#    - copy: src=logstash-forwarder.crt dest=/etc/ssl/certs mode=0600
   roles:
-    - { role: geerlingguy.logstash-forwarder }
+    - { role: jpnewman.elk-filebeat }
     - { role: geerlingguy.firewall }
   vars:
-    logstash_forwarder_logstash_server: 10.10.1.249
     firewall_allowed_tcp_ports:
       - "22"
       - "80"
@@ -16,4 +16,4 @@
       - "9200"
       - "9300"
       - "5000"
-
+    filebeat_logstash_host: 'logging:5000'
