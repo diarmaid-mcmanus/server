@@ -17,10 +17,10 @@ Vagrant.configure(2) do |config|
     end
   end
 
-#  config.vm.define "staticweb" do |server|
-#    server.vm.hostname = "staticweb"
-#    server.vm.network :private_network, ip: "10.10.1.11"
-#  end
+  config.vm.define "staticweb" do |server|
+    server.vm.hostname = "staticweb"
+    server.vm.network :private_network, ip: "10.10.1.11"
+  end
 #
 #  config.vm.define "loadbalancer" do |server|
 #    server.vm.hostname = "loadbalancer"
