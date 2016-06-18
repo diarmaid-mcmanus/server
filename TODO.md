@@ -1,1 +1,0 @@
-Set firewall to log
