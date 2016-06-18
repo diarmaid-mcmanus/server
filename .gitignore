@@ -6,3 +6,4 @@ boxes/*
 /website/build
 /vagrant-spec.config.rb
 main.retry
+*.swp
