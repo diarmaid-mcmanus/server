@@ -15,6 +15,9 @@
 
     - name: Set kibana to run on boot
       service: name=kibana enabled=yes state=started
+
+    - name: Pause for 10 seconds to allow kibana to come up
+      pause: seconds=10
     
     - name: Test kb is listening on localhost:5601
       action: uri url=http://localhost:5601 return_content=yes

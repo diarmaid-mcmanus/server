@@ -16,6 +16,9 @@
     - name: Set elasticsearch to run on boot
       service: name=elasticsearch enabled=yes state=started
 
+    - name: Pause for 10 seconds to allow elasticsearch to come up
+      pause: seconds=10
+
     - name: Test es is listening on localhost:9200
       action: uri url=http://localhost:9200/?pretty return_content=yes
       register: webpage
