@@ -6,3 +6,6 @@ logging
 
 [kibana]
 logging
+
+[beats]
+logging

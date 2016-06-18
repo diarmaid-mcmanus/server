@@ -1,0 +1,21 @@
+---
+- hosts: beats
+  tasks:
+    - name: Install the included GPG-KEY-elasticsearch
+      apt_key: data="{{ lookup('file', '../files/GPG-KEY-elasticsearch') }}" state=present
+
+    - name: Copy beats.list to /etc/apt/sources.list.d/
+      copy: src=../files/beats.list dest=/etc/apt/sources.list.d/ owner=root group=root mode=644
+
+    - name: Update apt repos and install elasticsearch
+      apt: update_cache=yes name=filebeat
+
+    - name: Copy over default config
+      copy: src=../files/default.conf dest=/etc/filebeat/filebeat.yml owner=root group=root mode=644
+
+    - name: Install openjdk-7-jre-headless
+      apt: name=openjdk-7-jre-headless
+
+    - name: Set filebeat to run on boot
+      service: name=filebeat enabled=yes state=started
+
