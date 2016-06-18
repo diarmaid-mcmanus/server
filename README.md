@@ -4,7 +4,7 @@ ASSUMPTIONS:
 TODO:
 - ~~set up elasticsearch~~
 - ~~logstash~~
-- ~~kibana~~ / nginx
+- ~~kibana~~ / nginx TODO: right now ssh port forwarding sure it's grand
 - add ssl to logstash
 - add 2nd server (staticwww)
   - nginx
