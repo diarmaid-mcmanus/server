@@ -16,6 +16,8 @@
     - name: Copy over the beats config file
       copy: src=../files/beats-pipeline.conf dest=/etc/logstash/conf.d/
 
+    - name: Copy over the elasticsearch-output.conf
+      copy: src=../files/elasticsearch-output.conf dest=/etc/logstash/conf.d/
+
     - name: Set logstash run on boot
       service: name=logstash enabled=yes state=started
-
