@@ -6,9 +6,9 @@ TODO:
 - ~~logstash~~
 - ~~kibana~~ / nginx TODO: right now ssh port forwarding sure it's grand
 - add ssl to logstash
-- add 2nd server (staticwww)
+- ~~add 2nd server (staticwww)~~
   - nginx
-  - filebeat
+  - filebeat TODO: need to expose logstash on 10.10.1.249
   - tests
 - tests to ensure filebeat talks to logstash
 - local management of mgmt box
