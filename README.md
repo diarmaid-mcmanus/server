@@ -2,8 +2,8 @@ ASSUMPTIONS:
 - this is being ran from a secured management box (lol)
 
 TODO:
-- ~~ set up elasticsearch ~~
-- ~~ logstash ~~
+- ~~set up elasticsearch~~
+- ~~logstash~~
 - kibana / nginx
 - add ssl to logstash
 - add 2nd server (staticwww)
