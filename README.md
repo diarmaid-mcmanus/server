@@ -4,7 +4,7 @@ ASSUMPTIONS:
 TODO:
 - ~~set up elasticsearch~~
 - ~~logstash~~
-- kibana / nginx
+- ~~kibana~~ / nginx
 - add ssl to logstash
 - add 2nd server (staticwww)
   - nginx
