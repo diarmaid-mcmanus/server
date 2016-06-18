@@ -1,5 +1,0 @@
-127.0.0.1 localhost
-
-10.10.1.249 logging
-10.10.1.10 loadbalancer
-10.10.1.11 staticweb

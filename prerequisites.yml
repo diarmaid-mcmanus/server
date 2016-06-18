@@ -1,7 +1,0 @@
-- src: geerlingguy.logstash
-- src: geerlingguy.nginx
-- src: geerlingguy.elasticsearch
-- src: geerlingguy.kibana
-- src: geerlingguy.firewall
-- src: tersmitten.fail2ban
-- src: jpnewman.elk-filebeat
