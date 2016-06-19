@@ -1,0 +1,16 @@
+---
+- name: Update apt repos and install nginx
+  apt: update_cache=yes name=nginx
+
+- name: Set nginx to run on boot
+  service: name=nginx enabled=yes state=started
+
+- name: Pause for 10 seconds to allow nginx to come up
+  pause: seconds=10
+
+- name: Test nginx is listening on localhost
+  action: uri url=http://localhost:80 return_content=yes
+  register: webpage
+
+- fail: msg="es not running"
+  when: "'nginx' not in webpage.content"
