@@ -2,7 +2,7 @@ server {
     listen 80;
     listen 10.10.1.11:80;
 
-    root /var/www/diarmaidmcmanus/
+    root /var/www/diarmaidmcmanus/;
     index index.html index.htm;
 
     server_name diarmaidmcmanus.com;
