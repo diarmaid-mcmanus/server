@@ -3,13 +3,13 @@
   file: path=/var/log/nginx/ state=directory mode=644
 
 - name: Create required folder (files - DMC) if they don't exist
-  file: path=/var/www/diarmaidmcmanus/ state=directory mode=644
+  file: path=/var/www/diarmaidmcmanus/ state=directory mode=755
 
 - name: Create required folder (files - MO) if they don't exist
-  file: path=/var/www/madcapocelot/ state=directory mode=644
+  file: path=/var/www/madcapocelot/ state=directory mode=755
 
 - name: Create required folder (files - ESP) if they don't exist
-  file: path=/var/www/espsecurityplugin/ state=directory mode=644
+  file: path=/var/www/espsecurityplugin/ state=directory mode=755
   
 - name: Update apt repos and install nginx
   apt: update_cache=yes name=nginx
