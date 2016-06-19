@@ -3,6 +3,7 @@ filebeat:
     - paths: 
         - /var/log/messages
         - "/var/log/*.log"
+        - "/var/log/nginx/*.log"
 output:
     logstash:
         hosts: ["logging:5043"]
