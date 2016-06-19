@@ -8,7 +8,8 @@ TODO:
 - add ssl to logstash
 - ~~add 2nd server (staticwww)~~
   - nginx
-  - filebeat TODO: need to expose logstash on 10.10.1.249
+  - ~~filebeat~~ TODO: need to expose logstash on 10.10.1.249
+  - TODO: need to set host_vars for filebeat to send logs to
   - tests
 - tests to ensure filebeat talks to logstash
 - local management of mgmt box

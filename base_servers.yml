@@ -1,0 +1,6 @@
+---
+- hosts: all
+  tasks:
+    - name: copy hosts file
+      copy: src=hosts dest=/etc/hosts owner=root group=root mode=644
+

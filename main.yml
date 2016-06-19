@@ -1,0 +1,13 @@
+---
+- hosts: all
+# include everything
+
+# set up base servers
+- include: base_servers.yml
+- include: upgrade_servers.yml
+
+# set up logging server
+- include: logging.yml
+
+# set up staticweb server
+- include: staticweb.yml

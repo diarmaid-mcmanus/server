@@ -1,27 +1,25 @@
 ---
-- hosts: elasticsearch
-  tasks:
-    - name: Install the included GPG-KEY-elasticsearch
-      apt_key: data="{{ lookup('file', '../files/GPG-KEY-elasticsearch') }}" state=present
+- name: Install the included GPG-KEY-elasticsearch
+  apt_key: data="{{ lookup('file', '../files/GPG-KEY-elasticsearch') }}" state=present
 
-    - name: Copy elasticsearch.list to /etc/apt/sources.list.d/
-      copy: src=../files/elasticsearch.list dest=/etc/apt/sources.list.d/ owner=root group=root mode=644
+- name: Copy elasticsearch.list to /etc/apt/sources.list.d/
+  copy: src=../files/elasticsearch.list dest=/etc/apt/sources.list.d/ owner=root group=root mode=644
 
-    - name: Update apt repos and install elasticsearch
-      apt: update_cache=yes name=elasticsearch
+- name: Update apt repos and install elasticsearch
+  apt: update_cache=yes name=elasticsearch
 
-    - name: Install openjdk-7-jre-headless
-      apt: name=openjdk-7-jre-headless
+- name: Install openjdk-7-jre-headless
+  apt: name=openjdk-7-jre-headless
 
-    - name: Set elasticsearch to run on boot
-      service: name=elasticsearch enabled=yes state=started
+- name: Set elasticsearch to run on boot
+  service: name=elasticsearch enabled=yes state=started
 
-    - name: Pause for 10 seconds to allow elasticsearch to come up
-      pause: seconds=10
+- name: Pause for 10 seconds to allow elasticsearch to come up
+  pause: seconds=10
 
-    - name: Test es is listening on localhost:9200
-      action: uri url=http://localhost:9200/?pretty return_content=yes
-      register: webpage
+- name: Test es is listening on localhost:9200
+  action: uri url=http://localhost:9200/?pretty return_content=yes
+  register: webpage
 
-    - fail: msg="es not running"
-      when: "'You Know, for Search' not in webpage.content"
+- fail: msg="es not running"
+  when: "'You Know, for Search' not in webpage.content"

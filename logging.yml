@@ -1,0 +1,8 @@
+---
+- hosts: logging
+
+  roles:
+    - elasticsearch
+    - logstash
+    - kibana
+    - beats
