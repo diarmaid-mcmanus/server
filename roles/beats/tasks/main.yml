@@ -9,7 +9,7 @@
   apt: update_cache=yes name=filebeat
 
 - name: Copy over default config
-  copy: src=../files/default.conf dest=/etc/filebeat/filebeat.yml owner=root group=root mode=644
+  copy: src=../files/filebeat.yml dest=/etc/filebeat/filebeat.yml owner=root group=root mode=644
 
 - name: Install openjdk-7-jre-headless
   apt: name=openjdk-7-jre-headless
