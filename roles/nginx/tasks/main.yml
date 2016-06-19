@@ -18,10 +18,10 @@
   service: name=nginx enabled=yes state=started
 
 - name: Copy over sites to sites-available
-  copy: src=*-site dest=/etc/nginx/sites-available/
+  copy: src=diarmaidmcmanus-site dest=/etc/nginx/sites-available/
 
 - name: Create symlink to sites-enabled
-  file: src=/etc/nginx/sites-available/diarmaidmcmanus-site 
+  file: dest=/etc/nginx/sites-enabled/diarmaidmcmanus src=/etc/nginx/sites-available/diarmaidmcmanus-site state=link
   
 - name: Pause for 10 seconds to allow nginx to come up
   pause: seconds=10
