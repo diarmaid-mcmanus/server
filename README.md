@@ -7,7 +7,7 @@ TODO:
 - ~~kibana~~ / nginx TODO: right now ssh port forwarding sure it's grand
 - add ssl to logstash
 - ~~add 2nd server (staticwww)~~
-  - nginx
+  - ~~nginx~~
   - ~~filebeat TODO: need to expose logstash on 10.10.1.249~~
   - ~~TODO: need to set host_vars for filebeat to send logs to~~ hacked in with etchosts
   - tests

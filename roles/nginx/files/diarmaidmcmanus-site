@@ -1,0 +1,16 @@
+server {
+    listen 80;
+    listen 10.10.1.11:80;
+
+    root /var/www/diarmaidmcmanus/
+    index index.html index.htm;
+
+    server_name diarmaidmcmanus.com;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    access_log /var/log/nginx/diarmaidmcmanus_access.log;
+    error_log /var/log/nginx/diarmaidmcmanus_error.log;
+}

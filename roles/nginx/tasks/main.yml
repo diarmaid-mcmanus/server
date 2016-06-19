@@ -1,10 +1,28 @@
 ---
+- name: Create required folder (logging) if they don't exist
+  file: path=/var/log/nginx/ state=directory mode=644
+
+- name: Create required folder (files - DMC) if they don't exist
+  file: path=/var/www/diarmaidmcmanus/ state=directory mode=644
+
+- name: Create required folder (files - MO) if they don't exist
+  file: path=/var/www/madcapocelot/ state=directory mode=644
+
+- name: Create required folder (files - ESP) if they don't exist
+  file: path=/var/www/espsecurityplugin/ state=directory mode=644
+  
 - name: Update apt repos and install nginx
   apt: update_cache=yes name=nginx
 
 - name: Set nginx to run on boot
   service: name=nginx enabled=yes state=started
 
+- name: Copy over sites to sites-available
+  copy: src=*-site dest=/etc/nginx/sites-available/
+
+- name: Create symlink to sites-enabled
+  file: src=/etc/nginx/sites-available/diarmaidmcmanus-site 
+  
 - name: Pause for 10 seconds to allow nginx to come up
   pause: seconds=10
 
