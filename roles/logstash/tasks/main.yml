@@ -3,7 +3,7 @@
   apt_key: data="{{ lookup('file', '../files/GPG-KEY-elasticsearch') }}" state=present
 
 - name: Copy elasticsearch.list to /etc/apt/sources.list.d/
-  copy: src=../files/logstash.list dest=/etc/apt/sources.list.d/ owner=root group=root mode=644
+  copy: src=logstash.list dest=/etc/apt/sources.list.d/ owner=root group=root mode=644
 
 - name: Update apt repos and install logstash
   apt: update_cache=yes name=logstash
@@ -12,10 +12,10 @@
   apt: name=openjdk-7-jre-headless
 
 - name: Copy over the beats config file
-  copy: src=../files/beats-pipeline.conf dest=/etc/logstash/conf.d/
+  copy: src=beats-pipeline.conf dest=/etc/logstash/conf.d/
 
 - name: Copy over the elasticsearch-output.conf
-  copy: src=../files/elasticsearch-output.conf dest=/etc/logstash/conf.d/
+  copy: src=elasticsearch-output.conf dest=/etc/logstash/conf.d/
 
 - name: Set logstash run on boot
   service: name=logstash enabled=yes state=started

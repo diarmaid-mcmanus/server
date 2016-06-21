@@ -3,7 +3,7 @@
   apt_key: data="{{ lookup('file', '../files/GPG-KEY-elasticsearch') }}" state=present
 
 - name: Copy elasticsearch.list to /etc/apt/sources.list.d/
-  copy: src=../files/elasticsearch.list dest=/etc/apt/sources.list.d/ owner=root group=root mode=644
+  copy: src=elasticsearch.list dest=/etc/apt/sources.list.d/ owner=root group=root mode=644
 
 - name: Update apt repos and install elasticsearch
   apt: update_cache=yes name=elasticsearch
