@@ -4,14 +4,15 @@ Vagrant.configure(2) do |config|
   # Config the VMs. disable shared folder.
   config.vm.box = "ubuntu/trusty64"
   config.vm.synced_folder ".","/vagrant", :disabled => true
-  config.ssh.insert_key = false
 
   # provision logging server, customise cores and ram
   config.vm.define "logging" do |server|
+
     server.vm.hostname = "logging"
     server.vm.network :private_network, ip: "10.10.1.249"
 
     server.vm.provider :virtualbox do |vb|
+      vb.name = "logging"
       vb.customize ["modifyvm", :id, "--memory", "2048" ]
       vb.customize ["modifyvm", :id, "--cpus", "2" ]
     end
@@ -20,6 +21,10 @@ Vagrant.configure(2) do |config|
   config.vm.define "staticweb" do |server|
     server.vm.hostname = "staticweb"
     server.vm.network :private_network, ip: "10.10.1.11"
+
+    server.vm.provider :virtualbox do |vb|
+      vb.name = "staticweb"
+    end
   end
 
   config.vm.define "loadbalancer" do |server|
@@ -27,6 +32,9 @@ Vagrant.configure(2) do |config|
     server.vm.network :private_network, ip: "10.10.1.10"
     server.vm.network :forwarded_port, guest: 80, host: 80
     server.vm.network :forwarded_port, guest: 443, host: 443
+    server.vm.provider :virtualbox do |vb|
+      vb.name = "loadbalancer"
+    end
   end
 
   config.vm.provider :virtualbox do |vb|
