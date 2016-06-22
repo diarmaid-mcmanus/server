@@ -1,3 +1,5 @@
+https://gist.github.com/scarolan/5782025
+
 ASSUMPTIONS:
 - this is being ran from a secured management box (lol)
 
@@ -7,11 +9,10 @@ TODO:
 - local management of mgmt box
 - ~~updates~~
 - fail2ban
-- haproxy
+- ~~haproxy~~
   - letsencrypt
-  - filebeat
-  - tests
-  - logging and staticwww
+  - ~~filebeat~~
+  - multiple domains
 - ensure all servers have appropriate tests in ansible!
 - firewall
   - basics

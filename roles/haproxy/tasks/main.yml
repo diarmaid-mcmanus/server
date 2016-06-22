@@ -1,0 +1,10 @@
+---
+- name: Update apt repos and install haproxy
+  apt: update_cache=yes name=haproxy
+
+- name: Copy haproxy configuration 
+  copy: src=haproxy.cfg dest=/etc/haproxy/haproxy.cfg owner=root group=root mode=644
+
+- name: Set haproxy to run on boot
+  service: name=haproxy enabled=yes state=started
+

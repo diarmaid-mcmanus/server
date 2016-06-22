@@ -15,3 +15,6 @@ logging
 logging
 staticweb
 loadbalancer
+
+[loadbalancer]
+loadbalancer

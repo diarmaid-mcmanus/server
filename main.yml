@@ -11,3 +11,6 @@
 
 # set up staticweb server
 - include: staticweb.yml
+
+# set up the loadbalancer & ssl terminator
+- include: loadbalancer.yml
