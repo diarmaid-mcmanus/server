@@ -9,6 +9,9 @@
 # set up logging server
 - include: logging.yml
 
+# set up bastion server
+- include: bastion.yml
+
 # set up staticweb server
 - include: staticweb.yml
 
