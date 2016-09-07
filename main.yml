@@ -17,3 +17,6 @@
 
 # set up the loadbalancer & ssl terminator
 - include: loadbalancer.yml
+
+# set up the foi server
+- include: alaveteli.yml

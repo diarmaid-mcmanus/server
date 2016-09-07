@@ -1,6 +1,7 @@
 logging ansible_port=22 ansible_host=10.10.1.249
 staticweb ansible_port=22 ansible_host=10.10.1.11
 loadbalancer ansible_host=10.10.1.10
+foi ansible_host=10.10.1.12
 
 [elasticsearch]
 logging 
@@ -15,6 +16,10 @@ logging
 logging
 staticweb
 loadbalancer
+foi
 
 [loadbalancer]
 loadbalancer
+
+[alaveteli]
+foi
