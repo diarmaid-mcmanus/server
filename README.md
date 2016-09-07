@@ -12,10 +12,14 @@ TODO:
 - ~~haproxy~~
   - letsencrypt
   - ~~filebeat~~
-  - multiple domains
+  - ~~ multiple domains with sni ~~
+- Alaveteli
+- Postfix
+- Postgres
 - ensure all servers have appropriate tests in ansible!
 - firewall
-  - basics
-  - deepen (allow to, from)
+  - deny all communication between hosts except required
+    - haproxy - servers, all - logging, etc.
+    - enable logging of firewall rule alerts
   - logging, filebeat
 - tests - monit, sensu, magiot, observium?
