@@ -12,7 +12,7 @@ TODO:
 - ~~haproxy~~
   - letsencrypt
   - ~~filebeat~~
-  - ~~ multiple domains with sni ~~
+  - ~~multiple domains with sni~~
 - Alaveteli
 - Postfix
 - Postgres
