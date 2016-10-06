@@ -1,0 +1,10 @@
+---
+- name: Update apt repos and install fail2ban
+  apt: update_cache=yes name=fail2ban
+
+- name: Copy configuration file
+  copy: src=jail.local dest=/etc/fail2ban owner=root group=root mode=644
+
+- name: Enable fail2ban and reload it
+  service: name=fail2ban enabled=yes state=started
+  

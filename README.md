@@ -11,16 +11,20 @@ HOW TO USE:
 TODO:
 - ~~kibana~~ / nginx TODO: right now ssh port forwarding sure it's grand
 - add ssl to logstash
-- local management of mgmt box
+- ~~local management of mgmt box~~ bastion.yml -K --connection=local
 - ~~updates~~
-- fail2ban
+- ~~fail2ban~~
 - ~~haproxy~~
   - letsencrypt
   - ~~filebeat~~
-  - multiple domains
+  - ~~multiple domains with sni~~ ish
+- Alaveteli
+- Postfix
+- Postgres
 - ensure all servers have appropriate tests in ansible!
 - firewall
-  - basics
-  - deepen (allow to, from)
+  - deny all communication between hosts except required
+    - haproxy - servers, all - logging, etc.
+    - enable logging of firewall rule alerts
   - logging, filebeat
 - tests - monit, sensu, magiot, observium?
