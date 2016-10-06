@@ -9,8 +9,14 @@
 # set up logging server
 - include: logging.yml
 
+# set up bastion server
+- include: bastion.yml
+
 # set up staticweb server
 - include: staticweb.yml
 
 # set up the loadbalancer & ssl terminator
 - include: loadbalancer.yml
+
+# set up the foi server
+#- include: alaveteli.yml

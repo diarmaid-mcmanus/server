@@ -1,0 +1,33 @@
+---
+- name: Create required folder (logging) if they don't exist
+  TODO: todo
+
+- name: Install mySocitey ppa
+
+- name: Install mySociety keys
+
+- name: Pin mySociety packages
+
+- name: Create alaveteli user
+
+- name: Check out alaveteli code to /var/www/
+
+- name: Install Alaveteli dependencies
+
+- name: Create postgres user
+
+- name: Create postgres template
+
+- name: Create postgres dbs
+
+- name: Copy over configuration file database.yml
+
+- name: Copy over configuration file general.yml
+
+- name: Configure Thin application server to run at boot
+
+- name: Configure crontab
+
+- name: Configure alerting to subscribed users
+
+

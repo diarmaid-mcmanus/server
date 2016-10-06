@@ -1,0 +1,15 @@
+---
+- hosts: foi
+
+  vars:
+    postfix: [ 'network', 'local', 'mx' ]
+    postfix_mailname: 'foi.oscailte.ie'
+    postfix_mydomain: 'foi.oscailte.ie'
+    postfix_message_size_limit: 2048
+
+  roles:
+    - debops.postfix
+    - debops.postgresql_server
+
+  include:
+    - configure_postfix.yml
