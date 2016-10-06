@@ -19,4 +19,4 @@
 - include: loadbalancer.yml
 
 # set up the foi server
-- include: alaveteli.yml
+#- include: alaveteli.yml
