@@ -2,21 +2,39 @@
 - name: Create required folder (logging) if they don't exist
   TODO: todo
 
-- name: Install mySocitey ppa
-
-- name: Install mySociety keys
+- name: Install mySocitey ppa. This installs the keys.
+  apt_repository: repo='ppa:mysociety/alaveteli'
 
 - name: Pin mySociety packages
+  blockinfile: 
+    dest: /etc/apt/preferences 
+    create: yes 
+    block: |
+      Package: *
+      Pin: origin debian.mysociety.org
+      Pin-Priority: 50
+      EOF
+
 
 - name: Create alaveteli user
+  user: name=alaveteli comment="Alaveteli" groups=adm,alaveteli
 
 - name: Check out alaveteli code to /var/www/
+  git: dest=/var/www/alaveteli/ repo=https://github.com/mysociety/alaveteli.git 
+  file: group=alaveteli mode=0755 owner=alaveteli path=/var/www/alaveteli/ state=directory recurse=yes
 
 - name: Install Alaveteli dependencies
+  apt: name={{ item }} update_cache="yes"
+  with_file:
+    - /var/www/alaveteli/config/packages.ubuntu-precise
 
 - name: Create postgres user
+  become: true
+  become_user: postgres
+  postgresql_user: name=foi encrypted=true password=TODO
 
 - name: Create postgres template
+  postgresql_db: name=template_utf8 template='template0' encoding='UTF-8' 
 
 - name: Create postgres dbs
 
