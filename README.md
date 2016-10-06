@@ -2,6 +2,11 @@ https://gist.github.com/scarolan/5782025
 
 ASSUMPTIONS:
 - this is being ran from a secured management box (lol)
+- bastion.yml now locks down the local box using fail2ban.
+
+HOW TO USE:
+- pip install debops
+- ansible-playbook -k -K -s main.yml
 
 TODO:
 - ~~kibana~~ / nginx TODO: right now ssh port forwarding sure it's grand
