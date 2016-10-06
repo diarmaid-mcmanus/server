@@ -6,13 +6,13 @@ ASSUMPTIONS:
 TODO:
 - ~~kibana~~ / nginx TODO: right now ssh port forwarding sure it's grand
 - add ssl to logstash
-- local management of mgmt box
+- ~~local management of mgmt box~~ bastion.yml -K --connection=local
 - ~~updates~~
-- fail2ban
+- ~~fail2ban~~
 - ~~haproxy~~
   - letsencrypt
   - ~~filebeat~~
-  - ~~multiple domains with sni~~
+  - ~~multiple domains with sni~~ ish
 - Alaveteli
 - Postfix
 - Postgres

@@ -37,6 +37,14 @@ Vagrant.configure(2) do |config|
     end
   end
 
+  config.vm.define "alaveteli" do |server|
+    server.vm.hostname = "foi"
+    server.vm.network :private_network, ip: "10.10.1.12"
+    server.vm.provider :virtualbox do |vb|
+        vb.name = "foi"
+    end
+  end
+
   config.vm.provider :virtualbox do |vb|
     vb.gui = false
 
