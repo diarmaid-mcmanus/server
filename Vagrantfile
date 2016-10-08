@@ -28,6 +28,15 @@ Vagrant.configure(2) do |config|
     end
   end
 
+  config.vm.define "scheduledtasks" do |server|
+    server.vm.hostname = "scheduledtasks"
+    server.vm.network :private_network, ip: "10.10.1.248"
+
+    server.vm.provider :virtualbox do |vb|
+      vb.name = "scheduledtasks"
+    end
+  end
+
 #  config.vm.define "loadbalancer" do |server|
 #    server.vm.hostname = "loadbalancer"
 #    server.vm.network :private_network, ip: "10.10.1.10"
