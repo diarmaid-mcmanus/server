@@ -21,21 +21,20 @@ Vagrant.configure(2) do |config|
   config.vm.define "staticweb" do |server|
     server.vm.hostname = "staticweb"
     server.vm.network :private_network, ip: "10.10.1.11"
+    server.vm.network :forwarded_port, guest: 80, host: 80
 
     server.vm.provider :virtualbox do |vb|
       vb.name = "staticweb"
     end
   end
 
-  config.vm.define "loadbalancer" do |server|
-    server.vm.hostname = "loadbalancer"
-    server.vm.network :private_network, ip: "10.10.1.10"
-    server.vm.network :forwarded_port, guest: 80, host: 80
-    server.vm.network :forwarded_port, guest: 443, host: 443
-    server.vm.provider :virtualbox do |vb|
-      vb.name = "loadbalancer"
-    end
-  end
+#  config.vm.define "loadbalancer" do |server|
+#    server.vm.hostname = "loadbalancer"
+#    server.vm.network :private_network, ip: "10.10.1.10"
+#    server.vm.provider :virtualbox do |vb|
+#      vb.name = "loadbalancer"
+#    end
+#  end
 
   config.vm.define "alaveteli" do |server|
     server.vm.hostname = "foi"
