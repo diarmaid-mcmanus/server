@@ -1,7 +1,9 @@
 ---
 - hosts: logging
+  vars:
+    elasticsearch_network_host: _site_
 
   roles:
-    - elasticsearch
+    - geerlingguy.elasticsearch
     - logstash
     - kibana

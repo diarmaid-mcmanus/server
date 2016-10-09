@@ -17,3 +17,4 @@
   roles:
     - beats
     - debops.fail2ban
+    - geerlingguy.java

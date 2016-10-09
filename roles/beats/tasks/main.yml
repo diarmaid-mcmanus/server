@@ -11,9 +11,6 @@
 - name: Copy over default config
   copy: src=filebeat.yml dest=/etc/filebeat/filebeat.yml owner=root group=root mode=644
 
-- name: Install openjdk-7-jre-headless
-  apt: name=openjdk-7-jre-headless
-
 - name: Set filebeat to run on boot
   service: name=filebeat enabled=yes state=started
 
