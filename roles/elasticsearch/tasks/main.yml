@@ -8,6 +8,9 @@
 - name: Update apt repos and install elasticsearch
   apt: update_cache=yes name=elasticsearch
 
+- name: Copy over elasticsearch configuration
+  copy: src=elasticsearch.yml dest=/etc/elasticsearch/elasticsearch.yml
+
 - name: Install openjdk-7-jre-headless
   apt: name=openjdk-7-jre-headless
 
