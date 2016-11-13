@@ -3,8 +3,11 @@
 
 
   tasks:
-    - name: install
+    - name: install prerequisites: git, python3 (?)
+      apt: name=git
+
+    - name: clone the repo
       git: repo=git://github.com/diarmaid-mcmanus/pythondaft.git dest=/home/vagrant/pythondaft/ version=nohaproxy
 
-    - name: cron
+    - name: cron the script
       cron: name="collect daft.ie properties" job="python3 /home/vagrant/pythondaft/daft.py" minute=0 hour=12
