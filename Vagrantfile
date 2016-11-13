@@ -13,8 +13,8 @@ Vagrant.configure(2) do |config|
 
     server.vm.provider :virtualbox do |vb|
       vb.name = "logging"
-      vb.customize ["modifyvm", :id, "--memory", "2048" ]
-      vb.customize ["modifyvm", :id, "--cpus", "2" ]
+      vb.customize ["modifyvm", :id, "--memory", "4096" ]
+      vb.customize ["modifyvm", :id, "--cpus", "3" ]
     end
   end
 
@@ -56,7 +56,7 @@ Vagrant.configure(2) do |config|
   config.vm.provider :virtualbox do |vb|
     vb.gui = false
 
-    vb.customize [ "modifyvm", :id, "--memory", "512" ]
+    vb.customize [ "modifyvm", :id, "--memory", "1024" ]
     vb.customize [ "modifyvm", :id, "--natdnshostresolver1", "on" ]
   end
 
