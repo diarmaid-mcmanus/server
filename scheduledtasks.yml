@@ -10,4 +10,4 @@
       git: repo=git://github.com/diarmaid-mcmanus/pythondaft.git dest=/home/vagrant/pythondaft
 
     - name: cron the script
-      cron: name="collect daft.ie properties" job="python3 /home/vagrant/pythondaft/daft.py" minute=0 hour=12
+      cron: name="collect daft.ie properties" job="python3 /home/vagrant/pythondaft/daft.py" minute=0 hour=12 user=vagrant
