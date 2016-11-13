@@ -5,11 +5,14 @@ ASSUMPTIONS:
 - bastion.yml now locks down the local box using fail2ban.
 
 HOW TO USE:
-- apt install python python-pip 
+- apt install git python python-pip sshpass
 - git clone git://github.com/ansible/ansible.git --recursive (see ansible docs)
 - get the latest vagrant from https://www.vagrantup.com/downloads.html
 - install virtualbox from https://www.virtualbox.org/wiki/Linux_Download
-- pip install debops
+- pip install pyyaml jinja2 debops
+- add files/hosts to /etc/hosts
+- ansible-galaxy install debops.fail2ban
+- ansible-galaxy install geerlingguy.haproxy
 - vagrant up
 - ansible-playbook -k -K -s main.yml
 
