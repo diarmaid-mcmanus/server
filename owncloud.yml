@@ -1,0 +1,5 @@
+---
+- hosts: owncloud
+
+  roles:
+    - debops.owncloud

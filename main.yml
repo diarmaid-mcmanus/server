@@ -20,3 +20,6 @@
 
 # set up the foi server
 #- include: alaveteli.yml
+
+# set up my owncloud
+- include: owncloud.yml
