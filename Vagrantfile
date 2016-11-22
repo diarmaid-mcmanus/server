@@ -21,10 +21,21 @@ Vagrant.configure(2) do |config|
   config.vm.define "staticweb" do |server|
     server.vm.hostname = "staticweb"
     server.vm.network :private_network, ip: "10.10.1.11"
-    server.vm.network :forwarded_port, guest: 80, host: 80
+#    server.vm.network :forwarded_port, guest: 80, host: 80
 
     server.vm.provider :virtualbox do |vb|
       vb.name = "staticweb"
+    end
+  end
+
+  config.vm.define "owncloud" do |server|
+    server.vm.hostname = "owncloud"
+    server.vm.network :private_network, ip: "10.10.1.14"
+    server.vm.network :forwarded_port, guest: 443, host: 443
+    server.vm.network :forwarded_port, guest: 80, host: 80
+
+    server.vm.provider :virtualbox do |vb|
+      vb.name = "owncloud"
     end
   end
 
